@@ -1,3 +1,5 @@
+#Alex The Analyst SQL Tutorial
+
 Insert into EmployeeDemographics VALUES
 (1011, 'Ryan', 'Howard', 26, 'Male'),
 (NULL, 'Holly','Flax', NULL, 'Male'),
@@ -92,17 +94,17 @@ From WareHouseEmployeeDemographics
 SELECT *
 FROM EmployeeDemographics
 UNION
---UNION Duplicateleri siler, hepsini gˆrmek iÁin ALL ekle
+--UNION Duplicateleri siler, hepsini g√∂rmek i√ßin ALL ekle
 SELECT *
 From WareHouseEmployeeDemographics
 ORDER BY EmployeeID
 
--- USE'un yanl˝˛ kullan˝m˝
+-- USE'un yanl√Ω√æ kullan√Ωm√Ω
 
 SELECT EmployeeID, FirstName, Age
 FROM SQLPractice.dbo.EmployeeDemographics
 UNION
---UNION Duplicateleri siler, hepsini gˆrmek iÁin ALL ekle
+--UNION Duplicateleri siler, hepsini g√∂rmek i√ßin ALL ekle
 SELECT EmployeeID, JobTitle, Salary
 From SQLPractice.dbo.EmployeeSalary
 ORDER BY EmployeeID
@@ -178,7 +180,7 @@ FROM SQLPractice.dbo.EmployeeDemographics dem
 JOIN SQLPractice.dbo.EmployeeSalary sal
 ON dem.EmployeeID = sal.EmployeeID
 
---Group By ile kar˛˝la˛t˝rma
+--Group By ile kar√æ√Ωla√æt√Ωrma
 
 SELECT FirstName, LastName, Gender, Salary, COUNT(Gender)
 FROM SQLPractice.dbo.EmployeeDemographics dem
@@ -224,13 +226,13 @@ INSERT INTO #temp_Employee VALUES (
 '1001', 'HR', '45000'
 )
 
---illa deer atamak zorunda deilsin, bir tabloyu da ekleyebilirsin.
+--illa de√∞er atamak zorunda de√∞ilsin, bir tabloyu da ekleyebilirsin.
 
 INSERT INTO #temp_Employee
 SELECT *
 FROM SQLPractice.dbo.EmployeeSalary
 
---2nd ˆrnek
+--2nd √∂rnek
 
 DROP TABLE IF EXISTS #Teamp_Employee2
 CREATE TABLE #Teamp_Employee2 (
@@ -320,7 +322,7 @@ UPDATE EmployeeDemographics
 SET FirstName = @FirstName
 WHERE FirstName = 'Dwight'
 
---bunu yapt˝ktan sonra programmability>str procedure>updated olan˝ exec et ve istediin deeri gir.
+--bunu yapt√Ωktan sonra programmability>str procedure>updated olan√Ω exec et ve istedi√∞in de√∞eri gir.
 
 
 
@@ -352,7 +354,7 @@ SELECT a.EmployeeID, AllAvgSalary
 FROM (Select EmployeeID, Salary, AVG(Salary) OVER() AS AllAvgSalary
       FROM EmployeeSalary) a
 
---subqueries in where (join yerine bu da kullan˝labilir) bu iyiymi˛ 
+--subqueries in where (join yerine bu da kullan√Ωlabilir) bu iyiymi√æ 
 
 Select EmployeeID, JobTitle, Salary
 FROM EmployeeSalary
